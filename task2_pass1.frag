@@ -117,11 +117,16 @@ vec4 material( in int idx )
         case 35: return vec4( 0.132, 0.132, 0.208, 128.0 ); // k_rg, n
 
         // Blue material.(9)
-        case 40: return vec4( 0.0, 0.1, 1.0, 0.0 ); // k_d
-        case 41: return vec4( 0.0, 0.02, 0.2, 0.0 ); // k_a
-        case 42: return vec4( 0.0, 0.2, 2.0, 0.0 ); // k_r
-        case 43: return vec4( 0.0, 0.1, 1.0, 64.0 ); // k_rg, n
+        case 36: return vec4( 0.0, 0.1, 1.0, 0.0 ); // k_d
+        case 37: return vec4( 0.0, 0.02, 0.2, 0.0 ); // k_a
+        case 38: return vec4( 0.0, 0.2, 2.0, 0.0 ); // k_r
+        case 39: return vec4( 0.0, 0.1, 1.0, 64.0 ); // k_rg, n
         
+        // Purple material.(10)
+        case 40: return 1.0 * vec4( 0.6, 0.0, 0.8, 0.0 ); // k_d
+        case 41: return 0.2 * vec4( 0.6, 0.0, 0.8, 0.0 ); // k_a
+        case 42: return 2.0 * vec4( 0.5, 0.0, 0.7, 0.0 ); // k_r
+        case 43: return vec4( 0.5, 0.0, 0.7, 64.0 );      // k_rg, n
     }
 }
 
@@ -135,10 +140,10 @@ vec4 plane( in int idx )
         case 2: return vec4( 1.0, 0.0, 0.0, 10.0 );
         case 3: return vec4( 0.0, 0.0, -1.0, 10.0 );
         case 4: return vec4( -1.0, 0.0, 0.0, 10.0 );
-        case 5: return vec4( 1.0, 0.0, 1.0, 10.0 );
-        case 6: return vec4( 1.0, 0.0, -1.0, 10.0 );
-        case 7: return vec4( -1.0, 0.0, 1.0, 10.0 );
-        case 8: return vec4( -1.0, 0.0, -1.0, 10.0 );
+        case 5: return vec4( 1.0, 0.0, 1.0, 14.0 );
+        case 6: return vec4( 1.0, 0.0, -1.0, 14.0 );
+        case 7: return vec4( -1.0, 0.0, 1.0, 14.0 );
+        case 8: return vec4( -1.0, 0.0, -1.0, 14.0 );
     }
 }
 

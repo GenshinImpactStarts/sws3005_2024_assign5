@@ -38,8 +38,8 @@
 //   spheres
 //   triangles
 const int NUM_LIGHTS    = 2;
-const int NUM_MATERIALS = 3;
-const int NUM_PLANES    = 2;
+const int NUM_MATERIALS = 11;
+const int NUM_PLANES    = 5;
 const int NUM_SPHERES   = 1;
 const int NUM_TRIANGLES = 279;
 const int NUM_FRAME     = 1; // Number of frames for the animation. (not implemented)

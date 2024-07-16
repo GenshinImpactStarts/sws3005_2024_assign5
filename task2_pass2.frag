@@ -44,7 +44,7 @@ const float DEFAULT_TMAX = 10.0e6;
 
 // Equivalent to number of recursion levels (0 means ray-casting only).
 // We are using iterations to replace recursions.
-const int NUM_ITERATIONS = 2;
+const int NUM_ITERATIONS = 3;
 
 //============================================================================
 // Define new struct types.
@@ -169,7 +169,7 @@ void loadTriangle( in int triangleIndex, out Triangle_t tri )
     tri.A = texelFetch( iChannel0,   index ).xyz;
     tri.B = texelFetch( iChannel0, index+1 ).xyz;
     tri.C = texelFetch( iChannel0, index+2 ).xyz;
-    tri.materialID = 1;
+    tri.materialID = 10;
 }
 
 
