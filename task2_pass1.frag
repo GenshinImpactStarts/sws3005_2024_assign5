@@ -62,23 +62,66 @@ vec4 light( in int idx )
 vec4 material( in int idx )
 {
     switch(idx) {
-        // Silver material.
+        // Silver material.(0)
         case  0: return 1.0 * vec4( 0.5, 0.5, 0.5, 0.0 ); // k_d
         case  1: return 0.2 * vec4( 0.5, 0.5, 0.5, 0.0 ); // k_a
         case  2: return 2.0 * vec4( 0.5, 0.5, 0.5, 0.0 ); // k_r
         case  3: return vec4( 0.5, 0.5, 0.5, 64.0 );      // k_rg, n
 
-        // Gold material.
+        // Gold material.(1)
         case  4: return 1.0 * vec4( 0.8, 0.7, 0.1, 0.0 ); // k_d
         case  5: return 0.2 * vec4( 0.8, 0.7, 0.1, 0.0 ); // k_a
         case  6: return 2.0 * vec4( 0.8, 0.7, 0.1, 0.0 ); // k_r
         case  7: return vec4( 0.8, 0.7, 0.1, 64.0 );      // k_rg, n
 
-        // Green plastic material.
+        // Green plastic material.(2)
         case  8: return 1.0 * vec4( 0.0, 0.8, 0.0, 0.0 ); // k_d
         case  9: return 0.2 * vec4( 0.0, 0.8, 0.0, 0.0 ); // k_a
         case 10: return vec4( 1.0, 1.0, 1.0, 0.0 );       // k_r
         case 11: return vec4( 0.5, 0.5, 0.5, 128.0 );     // k_rg, n
+
+        // Mirror.(3)
+        case 12: return vec4( 0.0, 0.2, 0.2, 0.0 ); // k_d
+        case 13: return vec4( 0.0, 0.08, 0.08, 0.0 ); // k_a
+        case 14: return vec4( 0.0, 0.6, 0.6, 0.0 ); // k_r
+        case 15: return vec4( 0.0, 0.12, 0.12, 64.0 ); // k_rg, n
+
+        // Copper material.(4)
+        case 16: return vec4( 0.780392, 0.568627, 0.113725, 0.0 ); // k_d
+        case 17: return vec4( 0.329412, 0.223529, 0.027451, 0.0 ); // k_a
+        case 18: return vec4( 0.992157, 0.941176, 0.807843, 0.0 ); // k_r
+        case 19: return vec4( 0.396863, 0.376470, 0.323137, 27.0 ); // k_rg, n
+
+        // Pearl material.(5)
+        case 20: return vec4( 1.0, 0.829, 0.829, 0.0 ); // k_d
+        case 21: return vec4( 0.25, 0.20725, 0.20725, 0.0 ); // k_a
+        case 22: return vec4( 0.296648, 0.296648, 0.296648, 0.0 ); // k_r
+        case 23: return vec4( 0.118659, 0.118659, 0.118659, 128.0 ); // k_rg, n
+
+        // Bronze material.(6)
+        case 24: return vec4( 0.714, 0.4284, 0.18144, 0.0 ); // k_d
+        case 25: return vec4( 0.2125, 0.1275, 0.054, 0.0 ); // k_a
+        case 26: return vec4( 0.393548, 0.271906, 0.166721, 0.0 ); // k_r
+        case 27: return vec4( 0.157419, 0.108762, 0.066688, 128.0 ); // k_rg, n
+
+        // Violet material.(7)
+        case 28: return vec4( 0.43, 0.47, 0.54, 0.0 ); // k_d
+        case 29: return vec4( 0.11, 0.06, 0.09, 0.0 ); // k_a
+        case 30: return vec4( 0.33, 0.33, 0.52, 0.0 ); // k_r
+        case 31: return vec4( 0.132, 0.132, 0.208, 128.0 ); // k_rg, n
+
+        // Black material.(8)
+        case 32: return vec4( 0.0, 0.0, 0.0, 0.0 ); // k_d
+        case 33: return vec4( 0.11, 0.06, 0.09, 0.0 ); // k_a
+        case 34: return vec4( 0.33, 0.33, 0.52, 0.0 ); // k_r
+        case 35: return vec4( 0.132, 0.132, 0.208, 128.0 ); // k_rg, n
+
+        // Blue material.(9)
+        case 40: return vec4( 0.0, 0.1, 1.0, 0.0 ); // k_d
+        case 41: return vec4( 0.0, 0.02, 0.2, 0.0 ); // k_a
+        case 42: return vec4( 0.0, 0.2, 2.0, 0.0 ); // k_r
+        case 43: return vec4( 0.0, 0.1, 1.0, 64.0 ); // k_rg, n
+        
     }
 }
 
