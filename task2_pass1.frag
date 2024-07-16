@@ -956,13 +956,15 @@ vec4 triangle( in int frame, in int idx )
 void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     int frame = iFrame % NUM_FRAME;
     int idx = int(fragCoord.x) + int(fragCoord.y) * int(iResolution.x);
-    if ( idx < LIGHTS_OFFSET ) { // update camera each frame
+    if ( idx < LIGHTS_OFFSET ) {
         fragColor = camera(idx);
         return;
-    }
-    if ( iFrame > 0 ) { // use the previous frame
-        fragColor = texelFetch(iChannel0, ivec2(fragCoord), 0);
+    } else if ( idx >= SPHERES_OFFSET && idx < TRIANGLES_OFFSET ) {
+        fragColor = sphere(idx - SPHERES_OFFSET);
         return;
+    }
+    if ( iFrame > 1 ) { // use the previous frame
+        discard;
     }
     if ( idx < MATERIALS_OFFSET ) {
         fragColor = light(idx - LIGHTS_OFFSET);
@@ -970,8 +972,6 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
         fragColor = material(idx - MATERIALS_OFFSET);
     } else if ( idx < SPHERES_OFFSET ) {
         fragColor = plane(idx - PLANES_OFFSET);
-    } else if ( idx < TRIANGLES_OFFSET ) {
-        fragColor = sphere(idx - SPHERES_OFFSET);
     } else {
         fragColor = triangle(frame, idx - TRIANGLES_OFFSET);
     }
