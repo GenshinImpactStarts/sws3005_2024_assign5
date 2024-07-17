@@ -47,7 +47,7 @@ const int NUM_FRAME     = 1; // Number of frames for the animation. (not impleme
 const int LIGHTS_UNIT    = 3;
 const int MATERIALS_UNIT = 4;
 const int PLANES_UNIT    = 1;
-const int SPHERES_UNIT   = 1;
+const int SPHERES_UNIT   = 7;
 const int TRIANGLES_UNIT = 3;
 
 const int LIGHTS_OFFSET    = 4;
