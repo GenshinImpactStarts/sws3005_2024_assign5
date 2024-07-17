@@ -375,10 +375,11 @@ bool IntersectNearestTriangle( in Ray_t ray, in float tmin, in float tmax,
                                out int hitMatID, out Barycentric_t bary )
 {
     bool hasHitSomething = false;
+    int vert_offset = 0;
+    int vert_cnt;
     for ( int i = 0; i < NUM_VERTEX.length(); i++ ) {
+        vert_cnt = NUM_VERTEX[i];
         if ( IntersectAABB( ray, i ) ) {
-            int vert_offset = VERTEX_OFFSET[i];
-            int vert_cnt = NUM_VERTEX[i];
             Triangle_t tri;
             for ( int j = 0; j < vert_cnt; j += 3 ) {
                 loadTriangle( vert_offset + j, tri );
@@ -389,6 +390,7 @@ bool IntersectNearestTriangle( in Ray_t ray, in float tmin, in float tmax,
                 }
             }
         }
+        vert_offset += vert_cnt;
     }
     return hasHitSomething;
 }
@@ -397,10 +399,11 @@ bool IntersectNearestTriangle( in Ray_t ray, in float tmin, in float tmax,
 
 bool IntersectAnyTriangle( in Ray_t ray, in float tmin, in float tmax )
 {
+    int vert_offset = 0;
+    int vert_cnt;
     for ( int i = 0; i < NUM_VERTEX.length(); i++ ) {
         if ( IntersectAABB( ray, i ) ) {
-            int vert_offset = VERTEX_OFFSET[i];
-            int vert_cnt = NUM_VERTEX[i];
+            vert_cnt = NUM_VERTEX[i];
             Triangle_t tri;
             for ( int j = 0; j < vert_cnt; j += 3 ) {
                 loadTriangle( vert_offset + j, tri );
@@ -409,6 +412,7 @@ bool IntersectAnyTriangle( in Ray_t ray, in float tmin, in float tmax )
                 }
             }
         }
+        vert_offset += vert_cnt;
     }
     return false;
 }

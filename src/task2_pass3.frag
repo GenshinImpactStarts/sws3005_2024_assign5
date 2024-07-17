@@ -1,3 +1,29 @@
+//============================================================================
+// PROJECT ID: 02
+//
+// GROUP NUMBER: 03
+//
+// STUDENT NAME: CHEN ZHIAN
+// NUS User ID.: t0933479
+//
+// STUDENT NAME: LI YIXIN
+// NUS User ID.: t0933820
+//
+// STUDENT NAME: OUYANG ANNAN
+// NUS User ID.: t0933394
+//
+// COMMENTS TO GRADER:
+//
+//============================================================================
+
+
+// FRAGMENT SHADER FOR SHADERTOY
+// Run this at https://www.shadertoy.com/new
+// See documentation at https://www.shadertoy.com/howto
+
+// Your browser must support WebGL 2.0.
+// Check your browser at https://webglreport.com/?v=2
+
 float random (vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
 }
