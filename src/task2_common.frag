@@ -30,27 +30,28 @@
 //============================================================================
 
 // Constants for the scene objects.
-// Buffer layout:
-//   camera
+// BufferA layout:
 //   lights
 //   materials
 //   planes
 //   spheres
 //   triangles
+//
+// BufferB layout:
+//   camera
 const int NUM_LIGHTS    = 2;
 const int NUM_MATERIALS = 13;
 const int NUM_PLANES    = 5;
 const int NUM_SPHERES   = 7;
 const int NUM_TRIANGLES = 279;
-const int NUM_FRAME     = 1; // Number of frames for the animation. (not implemented)
 
 const int LIGHTS_UNIT    = 3;
 const int MATERIALS_UNIT = 4;
 const int PLANES_UNIT    = 1;
-const int SPHERES_UNIT   = 7;
+const int SPHERES_UNIT   = 1;
 const int TRIANGLES_UNIT = 3;
 
-const int LIGHTS_OFFSET    = 4;
+const int LIGHTS_OFFSET    = 0;
 const int MATERIALS_OFFSET = LIGHTS_OFFSET    + LIGHTS_UNIT    * NUM_LIGHTS;
 const int PLANES_OFFSET    = MATERIALS_OFFSET + MATERIALS_UNIT * NUM_MATERIALS;
 const int SPHERES_OFFSET   = PLANES_OFFSET    + PLANES_UNIT    * NUM_PLANES;

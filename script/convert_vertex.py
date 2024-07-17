@@ -4,7 +4,7 @@ vec3_pattern = re.compile(r'vec3\((-?[\d.]+), (-?[\d.]+), (-?[\d.]+)\);?')
 
 AABB = ([float('inf')] * 3, [float('-inf')] * 3)
 
-with open('output.txt', 'r') as file:
+with open('../data/output.txt', 'r') as file:
     for idx, line in enumerate(file):
         matches = vec3_pattern.finditer(line)
         for match in matches:
