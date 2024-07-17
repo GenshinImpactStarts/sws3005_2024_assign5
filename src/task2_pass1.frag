@@ -7285,15 +7285,18 @@ vec4 getSphere(){
     float endPos1X = 0.0;
     float endPos1Y = 4.0;
     float endPos1Z = 0.0;
+    float r0 = (endPos1Y - 2.32)/2.0;
     float r1 = endPos1Y - 2.32;
     float r2 = mix(r1,r1+2.0,(Time-10.0)/(2.0 * PI));
     
     if (Time < 5.0) {
         return vec4( 0.1, 2.32, 0.5, uintBitsToFloat(packHalf2x16(vec2(0.09, 1))) );
-    } else if (Time < 8.0) {
-        newX = mix(0.1, endPos1X, (Time - 5.0) / 3.0);
-        newY = mix(2.32, endPos1Y, (Time - 5.0) / 3.0);
-        newZ = mix(0.5, endPos1Z, (Time - 5.0) / 3.0);
+    } else if(Time < 7.0){
+        result = vec4( 0.1, 2.32+r0-r0*cos((Time-5.0)*PI/2.0), 0.5 + r0*sin((Time-5.0)*PI/2.0), uintBitsToFloat(packHalf2x16(vec2(0.09, 1))) );
+    }else if (Time < 8.0) {
+        newX = mix(0.1, endPos1X, (Time - 7.0) / 1.0);
+        newY = endPos1Y;
+        newZ = mix(0.5, endPos1Z, (Time - 7.0) / 1.0);
         return vec4( newX, newY, newZ, uintBitsToFloat(packHalf2x16(vec2(0.09, 1))) );
     } else if (Time < 10.0) {
         result = vec4( endPos1X + r1 * sin((Time - 8.0)/2.0 * PI/2.0), 4.0 - r1 + r1 * cos((Time - 8.0)/2.0 * PI/2.0), endPos1Z, uintBitsToFloat(packHalf2x16(vec2(0.09, 1))) );
@@ -7321,7 +7324,7 @@ vec4 sphere( in int idx )
     switch(idx) {
         case 0: return vec4( 0.1, 2.32, 0.5, uintBitsToFloat(packHalf2x16(vec2(0.1, 0.1))) ); // center, radius, materialID
         
-        case 1: 
+        case 1:
             // result = getSphere();
             result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 1)));
             if (Time < 8.0) return result;
