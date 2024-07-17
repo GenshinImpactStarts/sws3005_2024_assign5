@@ -73,14 +73,21 @@ vec4 light( in int idx )
 {
     switch(idx) {
         // Light 0.
-        case 0: return vec4( 4.0, 8.0, -3.0, 0.0 ); // position
-        case 1: return vec4( 0.1, 0.1, 0.1, 0.0 );  // I_a
+        case 0: return vec4( -12.0, 8.0, -16.0, 0.0 ); // position
+        case 1: return vec4( 0.15, 0.15, 0.15, 0.0 );  // I_a
         case 2: return vec4( 1.0, 1.0, 1.0, 0.0 );  // I_source
 
         // Light 1.
-        case 3: return vec4( -4.0, 8.0, 0.0, 0.0 ); // position
-        case 4: return vec4( 0.1, 0.1, 0.1, 0.0 );  // I_a
+        case 3: return vec4( 8.0, 5.0, 0.0, 0.0 ); // position
+        case 4: return vec4( 0.15, 0.15, 0.15, 0.0 );  // I_a
         case 5: return vec4( 1.0, 1.0, 1.0, 0.0 );  // I_source
+        
+        // Light 1.
+        case 6: return vec4( -3.0, 6.0, 4.0, 0.0 ); // position
+        case 7: return vec4( 0.08, 0.08, 0.08, 0.0 );  // I_a
+        case 8: return vec4( 1.0, 1.0, 1.0, 0.0 );  // I_source
+        
+        
     }
 }
 
@@ -95,21 +102,21 @@ vec4 material( in int idx )
 
         // Gold material.(1)
         case  4: return 1.0 * vec4( 0.8, 0.7, 0.1, 0.0 ); // k_d
-        case  5: return 0.2 * vec4( 0.8, 0.7, 0.1, 0.0 ); // k_a
+        case  5: return 0.6 * vec4( 0.8, 0.7, 0.1, 0.0 ); // k_a
         case  6: return 2.0 * vec4( 0.8, 0.7, 0.1, 0.0 ); // k_r
         case  7: return vec4( 0.8, 0.7, 0.1, 64.0 );      // k_rg, n
 
         // Green plastic material.(2)
         case  8: return 1.0 * vec4( 0.0, 0.8, 0.0, 0.0 ); // k_d
-        case  9: return 0.2 * vec4( 0.0, 0.8, 0.0, 0.0 ); // k_a
+        case  9: return 0.5 * vec4( 0.0, 0.8, 0.0, 0.0 ); // k_a
         case 10: return vec4( 1.0, 1.0, 1.0, 0.0 );       // k_r
         case 11: return vec4( 0.5, 0.5, 0.5, 128.0 );     // k_rg, n
 
         // Mirror.(3)
-        case 12: return vec4( 0.0, 0.2, 0.2, 0.0 ); // k_d
-        case 13: return vec4( 0.0, 0.08, 0.08, 0.0 ); // k_a
-        case 14: return vec4( 0.0, 0.6, 0.6, 0.0 ); // k_r
-        case 15: return vec4( 0.0, 0.12, 0.12, 64.0 ); // k_rg, n
+        case 12: return vec4( 0.0, 0.1, 0.2, 0.0 ); // k_d
+        case 13: return vec4( 0.0, 0.1, 0.2, 0.0 ); // k_a
+        case 14: return vec4( 0.0, 0.1, 0.2, 0.0 ); // k_r
+        case 15: return vec4( 0.3, 0.4, 0.5, 64.0 ); // k_rg, n
 
         // Copper material.(4)
         case 16: return vec4( 0.780392, 0.568627, 0.113725, 0.0 ); // k_d
@@ -131,7 +138,7 @@ vec4 material( in int idx )
 
         // Violet material.(7)
         case 28: return vec4( 0.43, 0.47, 0.54, 0.0 ); // k_d
-        case 29: return vec4( 0.11, 0.06, 0.09, 0.0 ); // k_a
+        case 29: return 2.0 * vec4( 0.11, 0.06, 0.09, 0.0 ); // k_a
         case 30: return vec4( 0.33, 0.33, 0.52, 0.0 ); // k_r
         case 31: return vec4( 0.132, 0.132, 0.208, 128.0 ); // k_rg, n
 
@@ -143,7 +150,7 @@ vec4 material( in int idx )
 
         // Blue material.(9)
         case 36: return 1.0 * vec4( 0.1, 0.4, 1.0, 0.0 ); // k_d
-        case 37: return 0.2 * vec4( 0.1, 0.4, 1.0, 0.0 ); // k_a
+        case 37: return 0.4 * vec4( 0.1, 0.4, 1.0, 0.0 ); // k_a
         case 38: return 2.0 * vec4( 0.1, 0.4, 1.0, 0.0 ); // k_r
         case 39: return vec4( 0.1, 0.4, 1.0, 64.0 );      // k_rg, n
 
@@ -155,13 +162,13 @@ vec4 material( in int idx )
 
         // Red material.(11)
         case 44: return 1.0 * vec4( 1.0, 0.1, 0.1, 0.0 ); // k_d
-        case 45: return 0.2 * vec4( 1.0, 0.1, 0.1, 0.0 ); // k_a
+        case 45: return 0.6 * vec4( 1.0, 0.1, 0.1, 0.0 ); // k_a
         case 46: return 2.0 * vec4( 1.0, 0.1, 0.1, 0.0 ); // k_r
         case 47: return vec4( 1.0, 0.1, 0.1, 64.0 );      // k_rg, n
 
         // Orange material.(12)
         case 48: return 1.0 * vec4( 1.0, 0.5, 0.1, 0.0 ); // k_d
-        case 49: return 0.2 * vec4( 1.0, 0.5, 0.1, 0.0 ); // k_a
+        case 49: return 0.5 * vec4( 1.0, 0.5, 0.1, 0.0 ); // k_a
         case 50: return 2.0 * vec4( 1.0, 0.5, 0.1, 0.0 ); // k_r
         case 51: return vec4( 1.0, 0.5, 0.1, 64.0 );      // k_rg, n
     }
@@ -235,7 +242,7 @@ vec4 sphere( in int idx )
             return vec4( 0.1, 2.32, 0.5, uintBitsToFloat(packHalf2x16(vec2(0.1, 0.1))) ); // center, radius, materialID
         case 1:
             // result = getSphere();
-            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 1)));
+            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 11)));
             if (Time < 8.0) return result;
             if (Time > 10.0 + 2.0 * PI){
                 newX = mix( result.x,0.1, (Time - 10.0 - 2.0 * PI) / (10.0- 2.0 * PI));
@@ -246,7 +253,7 @@ vec4 sphere( in int idx )
             }
             return result;
         case 2:
-            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 2)));
+            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 12)));
             if (Time < 8.0) return result;
             result = rotationMatrix60 * result;
             if (Time > 10.0 + 2.0 * PI){
@@ -258,19 +265,19 @@ vec4 sphere( in int idx )
             }
             return result;
         case 3:
-            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 4)));
+            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 1)));
             if (Time < 8.0) return result;
             result = rotationMatrix120 * result;
             if (Time > 10.0 + 2.0 * PI){
                 newX = mix( result.x,0.1, (Time - 10.0 - 2.0 * PI) / (10.0- 2.0 * PI));
                 newY = 2.32;
                 newZ = mix( result.z,0.5, (Time - 10.0 - 2.0 * PI) / (10.0- 2.0 * PI));
-                result = vec4( newX, newY, newZ, uintBitsToFloat(packHalf2x16(vec2(0.09, 4))) );
+                result = vec4( newX, newY, newZ, uintBitsToFloat(packHalf2x16(vec2(0.09, 1))) );
                 return result;
             }
             return result;
         case 4:
-            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 6)));
+            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 2)));
             if (Time < 8.0) return result;
             result = rotationMatrix180 * result;
             if (Time > 10.0 + 2.0 * PI){
@@ -282,7 +289,7 @@ vec4 sphere( in int idx )
             }
             return result;
         case 5:
-            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 7)));
+            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 9)));
             if (Time < 8.0) return result;
             result = rotationMatrix240 * result;
             if (Time > 10.0 + 2.0 * PI){
@@ -294,14 +301,14 @@ vec4 sphere( in int idx )
             }
             return result;
         case 6:
-            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 9)));
+            result.w = uintBitsToFloat(packHalf2x16(vec2(0.09, 7)));
             if (Time < 8.0) return result;
             result = rotationMatrix300 * result;
             if (Time > 10.0 + 2.0 * PI){
                 newX = mix( result.x,0.1, (Time - 10.0 - 2.0 * PI) / (10.0- 2.0 * PI));
                 newY = 2.32;
                 newZ = mix( result.z,0.5, (Time - 10.0 - 2.0 * PI) / (10.0- 2.0 * PI));
-                result = vec4( newX, newY, newZ, uintBitsToFloat(packHalf2x16(vec2(0.09, 10))) );
+                result = vec4( newX, newY, newZ, uintBitsToFloat(packHalf2x16(vec2(0.09, 7))) );
                 return result;
             }
             return result;
@@ -1158,7 +1165,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
         fragColor = sphere(idx - SPHERES_OFFSET);
         return;
     }
-    if ( iFrame > 1 ) { // use the previous frame
+    if ( iFrame > 3 ) { // use the previous frame
         discard;
     }
     if ( idx < MATERIALS_OFFSET ) {

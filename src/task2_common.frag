@@ -39,7 +39,7 @@
 //
 // BufferB layout:
 //   camera
-const int NUM_LIGHTS    = 2;
+const int NUM_LIGHTS    = 3;
 const int NUM_MATERIALS = 13;
 const int NUM_PLANES    = 5;
 const int NUM_SPHERES   = 7;
