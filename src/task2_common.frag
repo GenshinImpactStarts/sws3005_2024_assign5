@@ -35,7 +35,7 @@
 //   materials
 //   planes
 //   spheres
-//   triangles
+//   triangles (front, back, top, bottom, ring, foot)
 //
 // BufferB layout:
 //   camera
@@ -43,13 +43,38 @@ const int NUM_LIGHTS    = 3;
 const int NUM_MATERIALS = 13;
 const int NUM_PLANES    = 5;
 const int NUM_SPHERES   = 7;
-const int NUM_TRIANGLES = 279;
+
+const int NUM_VERTEX[] = int[](
+    210, // front
+    162, // back
+    114, // top
+    93,  // bottom
+    96,  // ring
+    123  // foot
+);
 
 const int LIGHTS_UNIT    = 3;
 const int MATERIALS_UNIT = 4;
 const int PLANES_UNIT    = 1;
 const int SPHERES_UNIT   = 1;
-const int TRIANGLES_UNIT = 3;
+
+const vec3 AABB_MIN[] = vec3[](
+    vec3(-0.46,  1.40, -0.04), // front
+    vec3(-0.46,  1.25, -0.25), // back
+    vec3(-0.24,  2.64, -0.06), // top
+    vec3(-0.46,  0.67, -0.22), // bottom
+    vec3(-0.71,  2.28, -0.27), // ring
+    vec3(-0.59, -0.24, -0.77)  // foot
+);
+
+const vec3 AABB_MAX[] = vec3[](
+    vec3(0.59, 2.91,  0.62), // front
+    vec3(0.59, 3.17,  0.22), // back
+    vec3(0.33, 3.23,  0.56), // top
+    vec3(0.59, 1.95,  0.51), // bottom
+    vec3(0.84, 3.59, -0.18), // ring
+    vec3(0.59, 0.90,  0.45)  // foot
+);
 
 const int LIGHTS_OFFSET    = 0;
 const int MATERIALS_OFFSET = LIGHTS_OFFSET    + LIGHTS_UNIT    * NUM_LIGHTS;
@@ -57,5 +82,19 @@ const int PLANES_OFFSET    = MATERIALS_OFFSET + MATERIALS_UNIT * NUM_MATERIALS;
 const int SPHERES_OFFSET   = PLANES_OFFSET    + PLANES_UNIT    * NUM_PLANES;
 const int TRIANGLES_OFFSET = SPHERES_OFFSET   + SPHERES_UNIT   * NUM_SPHERES;
 
-const vec3 AABB_MIN = vec3(-0.8, -0.1, -0.8);
-const vec3 AABB_MAX = vec3( 0.9,  3.9,  0.7);
+// for initializing the vertex offset array
+const int VERTEX_OFFSET_0 = 0;
+const int VERTEX_OFFSET_1 = VERTEX_OFFSET_0 + NUM_VERTEX[0];
+const int VERTEX_OFFSET_2 = VERTEX_OFFSET_1 + NUM_VERTEX[1];
+const int VERTEX_OFFSET_3 = VERTEX_OFFSET_2 + NUM_VERTEX[2];
+const int VERTEX_OFFSET_4 = VERTEX_OFFSET_3 + NUM_VERTEX[3];
+const int VERTEX_OFFSET_5 = VERTEX_OFFSET_4 + NUM_VERTEX[4];
+
+const int VERTEX_OFFSET[] = int[](
+    VERTEX_OFFSET_0,
+    VERTEX_OFFSET_1,
+    VERTEX_OFFSET_2,
+    VERTEX_OFFSET_3,
+    VERTEX_OFFSET_4,
+    VERTEX_OFFSET_5
+);
