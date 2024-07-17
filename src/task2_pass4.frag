@@ -374,6 +374,7 @@ bool IntersectNearestTriangle( in Ray_t ray, in float tmin, in float tmax,
                                out float t, out vec3 hitPos, out vec3 hitNormal,
                                out int hitMatID, out Barycentric_t bary )
 {
+    t = tmax;
     bool hasHitSomething = false;
     int vert_offset = 0;
     int vert_cnt;
@@ -402,8 +403,8 @@ bool IntersectAnyTriangle( in Ray_t ray, in float tmin, in float tmax )
     int vert_offset = 0;
     int vert_cnt;
     for ( int i = 0; i < NUM_VERTEX.length(); i++ ) {
+        vert_cnt = NUM_VERTEX[i];
         if ( IntersectAABB( ray, i ) ) {
-            vert_cnt = NUM_VERTEX[i];
             Triangle_t tri;
             for ( int j = 0; j < vert_cnt; j += 3 ) {
                 loadTriangle( vert_offset + j, tri );
