@@ -88,13 +88,11 @@ vec4 light( in int idx )
         case 3: return vec4( 8.0, 5.0, 0.0, 0.0 ); // position
         case 4: return vec4( 0.15, 0.15, 0.15, 0.0 );  // I_a
         case 5: return vec4( 1.0, 1.0, 1.0, 0.0 );  // I_source
-        
-        // Light 1.
+
+        // Light 2.
         case 6: return vec4( -3.0, 6.0, 4.0, 0.0 ); // position
         case 7: return vec4( 0.08, 0.08, 0.08, 0.0 );  // I_a
         case 8: return vec4( 1.0, 1.0, 1.0, 0.0 );  // I_source
-        
-        
     }
 }
 

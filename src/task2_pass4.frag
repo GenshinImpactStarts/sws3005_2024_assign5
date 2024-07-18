@@ -16,7 +16,7 @@
 //                     Therer are 3 input need to be configured in shadertoy:
 //                     iChannel0: BufferA
 //                     iChannel1: BufferB
-//                     iChannel2: CubeA 
+//                     iChannel2: CubeA
 //
 //                     We use multiple passes and this is only a part of tasks2.
 //                     There are 1 common file and 4 pass files in total.
