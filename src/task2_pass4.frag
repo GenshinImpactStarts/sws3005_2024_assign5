@@ -40,8 +40,6 @@
 
 const float PI = 3.1415926536;
 
-const vec3 BACKGROUND_COLOR = vec3( 0.1, 0.2, 0.6 );
-
 // Vertical field-of-view angle of camera. In radians.
 const float FOVY = 50.0 * PI / 180.0;
 
@@ -207,8 +205,6 @@ bool IntersectPlane( in Plane_t pln, in Ray_t ray, in float tmin, in float tmax,
     return true;
 }
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // Computes intersection between a plane and a ray.
 // Returns true if there is an intersection where the ray parameter t is
@@ -223,8 +219,6 @@ bool IntersectPlane( in Plane_t pln, in Ray_t ray, in float tmin, in float tmax 
     if ( t0 < tmin || t0 > tmax ) return false;
     return true;
 }
-
-
 
 /////////////////////////////////////////////////////////////////////////////
 // Computes intersection between a sphere and a ray.
@@ -263,8 +257,6 @@ bool IntersectSphere( in Sphere_t sph, in Ray_t ray, in float tmin, in float tma
     return true;
 }
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // Computes intersection between a sphere and a ray.
 // Returns true if there is an intersection where the ray parameter t is
@@ -292,8 +284,6 @@ bool IntersectSphere( in Sphere_t sph, in Ray_t ray, in float tmin, in float tma
     }
     return true;
 }
-
-
 
 bool IntersectTriangle( in Triangle_t tri, in Ray_t ray, in float tmin, in float tmax,
                         out float t, out vec3 hitPos, out vec3 hitNormal, out Barycentric_t bary )
@@ -329,8 +319,6 @@ bool IntersectTriangle( in Triangle_t tri, in Ray_t ray, in float tmin, in float
     return true;
 }
 
-
-
 bool IntersectTriangle( in Triangle_t tri, in Ray_t ray, in float tmin, in float tmax )
 {
     vec3 A_sub_Ro = tri.A - ray.o;
@@ -356,8 +344,6 @@ bool IntersectTriangle( in Triangle_t tri, in Ray_t ray, in float tmin, in float
     return true;
 }
 
-
-
 bool IntersectAABB( in Ray_t ray, in int AABB_idx )
 {
     vec3 invD = vec3(
@@ -376,8 +362,6 @@ bool IntersectAABB( in Ray_t ray, in int AABB_idx )
 
     return t_min_max <= t_max_min && t_max_min >= 0.0;
 }
-
-
 
 bool IntersectNearestTriangle( in Ray_t ray, in float tmin, in float tmax,
                                out float t, out vec3 hitPos, out vec3 hitNormal,
@@ -404,8 +388,6 @@ bool IntersectNearestTriangle( in Ray_t ray, in float tmin, in float tmax,
     }
     return hasHitSomething;
 }
-
-
 
 bool IntersectAnyTriangle( in Ray_t ray, in float tmin, in float tmax )
 {

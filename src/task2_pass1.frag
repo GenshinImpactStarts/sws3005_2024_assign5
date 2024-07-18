@@ -196,7 +196,8 @@ vec4 plane( in int idx )
     }
 }
 
-vec4 getSphere(){
+vec4 getSphere()
+{
     float Time = mod(iTime, 20.0);
     int num = 1;
     vec4 result;
@@ -223,7 +224,6 @@ vec4 getSphere(){
         result = vec4( endPos1X + r1 * sin((Time - 8.0)/2.0 * PI/2.0), 4.0 - r1 + r1 * cos((Time - 8.0)/2.0 * PI/2.0), endPos1Z, uintBitsToFloat(packHalf2x16(vec2(0.09, 1))) );
     }else if (Time < 10.0 + 2.0 * PI){
         float speed = 1.0;
-
         result = vec4( endPos1X + r2*cos((Time-10.0)*speed), 2.32, endPos1Z + r2*sin((Time-10.0)*speed), uintBitsToFloat(packHalf2x16(vec2(0.09, 1))) );
     }else if (Time < 20.0){
         result = vec4( endPos1X + r2, 2.32, endPos1Z, uintBitsToFloat(packHalf2x16(vec2(0.09, 1))) );
