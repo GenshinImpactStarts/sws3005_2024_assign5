@@ -12,7 +12,16 @@
 // STUDENT NAME: OUYANG ANNAN
 // NUS User ID.: t0933394
 //
-// COMMENTS TO GRADER:
+// COMMENTS TO GRADER: This is the pass 4 shader which will output to the screen.
+//                     Therer are 3 input need to be configured in shadertoy:
+//                     iChannel0: BufferA
+//                     iChannel1: BufferB
+//                     iChannel2: CubeA 
+//
+//                     We use multiple passes and this is only a part of tasks2.
+//                     There are 1 common file and 4 pass files in total.
+//                     The complete project is in the following link:
+//                     https://www.shadertoy.com/view/lflcWH
 //
 //============================================================================
 

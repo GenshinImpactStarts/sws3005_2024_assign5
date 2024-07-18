@@ -12,7 +12,13 @@
 // STUDENT NAME: OUYANG ANNAN
 // NUS User ID.: t0933394
 //
-// COMMENTS TO GRADER:
+// COMMENTS TO GRADER: This is the common fragment shader which will be included
+//                     in all the other fragment shaders by shadertoy.
+//
+//                     We use multiple passes and this is only a part of tasks2.
+//                     There are 1 common file and 4 pass files in total.
+//                     The complete project is in the following link:
+//                     https://www.shadertoy.com/view/lflcWH
 //
 //============================================================================
 
