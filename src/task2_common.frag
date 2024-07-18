@@ -41,7 +41,7 @@
 //   camera
 const int NUM_LIGHTS    = 3;
 const int NUM_MATERIALS = 13;
-const int NUM_PLANES    = 5;
+const int NUM_PLANES    = 1;
 const int NUM_SPHERES   = 7;
 
 const int NUM_VERTEX[] = int[](
@@ -50,7 +50,7 @@ const int NUM_VERTEX[] = int[](
     114, // top
     93,  // bottom
     96,  // ring
-    123  // foot
+    159  // foot
 );
 
 const int LIGHTS_UNIT    = 3;
@@ -59,21 +59,21 @@ const int PLANES_UNIT    = 1;
 const int SPHERES_UNIT   = 1;
 
 const vec3 AABB_MIN[] = vec3[](
-    vec3(-0.46,  1.40, -0.04), // front
-    vec3(-0.46,  1.25, -0.25), // back
-    vec3(-0.24,  2.64, -0.06), // top
-    vec3(-0.46,  0.67, -0.22), // bottom
-    vec3(-0.71,  2.28, -0.27), // ring
-    vec3(-0.59, -0.24, -0.77)  // foot
+    vec3(-0.46,  1.62, -0.04), // front
+    vec3(-0.46,  1.47, -0.25), // back
+    vec3(-0.24,  2.85, -0.06), // top
+    vec3(-0.46,  0.89, -0.22), // bottom
+    vec3(-0.71,  2.50, -0.27), // ring
+    vec3(-0.59, -0.02, -0.77)  // foot
 );
 
 const vec3 AABB_MAX[] = vec3[](
-    vec3(0.59, 2.91,  0.62), // front
-    vec3(0.59, 3.17,  0.22), // back
-    vec3(0.33, 3.23,  0.56), // top
-    vec3(0.59, 1.95,  0.51), // bottom
-    vec3(0.84, 3.59, -0.18), // ring
-    vec3(0.59, 0.90,  0.45)  // foot
+    vec3(0.59, 3.13,  0.62), // front
+    vec3(0.59, 3.39,  0.22), // back
+    vec3(0.33, 3.45,  0.56), // top
+    vec3(0.59, 2.17,  0.51), // bottom
+    vec3(0.84, 3.81, -0.18), // ring
+    vec3(0.71, 1.12,  0.45)  // foot
 );
 
 const int LIGHTS_OFFSET    = 0;
